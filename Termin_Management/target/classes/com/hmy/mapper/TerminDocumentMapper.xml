@@ -5,9 +5,13 @@
   
 <mapper namespace="com.hmy.mapper.TerminDocumentMapper">
 
-<!-- 	기일목록보기 -->
-  <select id="getList" resultType="com.hmy.domain.TerminDocumentVO">
-    SELECT * FROM termindocument order by td_termin, td_time
+<!-- 	기일목록보기(기일 잡힌) -->
+  <select id="getList1" resultType="com.hmy.domain.TerminDocumentVO">
+    SELECT * FROM termindocument where td_termin is not null order by td_termin, td_time
+  </select>
+  <!-- 	기일목록보기(기일 아직 안잡힌) -->
+  <select id="getList2" resultType="com.hmy.domain.TerminDocumentVO">
+    SELECT * FROM termindocument where td_termin is null order by td_client
   </select>
   
 <!--   기일등록 -->

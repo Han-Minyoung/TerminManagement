@@ -21,9 +21,17 @@ public class TerminDocumentMapperTest {
 	private TerminDocumentMapper mapper;
 	
 	
-	@Test //기일부 목록보기 테스트
-	public void testGetList() {
-		List<TerminDocumentVO> list =mapper.getList();
+	@Test //기일부 목록보기 테스트(기일 잡힌)
+	public void testGetList1() {
+		List<TerminDocumentVO> list =mapper.getList1();
+		for(TerminDocumentVO temp : list) {
+			log.info("기일부 목록: "+temp);
+		}
+	}
+	
+	@Test //기일부 목록보기 테스트(기일 안잡힌)
+	public void testGetList2() {
+		List<TerminDocumentVO> list =mapper.getList2();
 		for(TerminDocumentVO temp : list) {
 			log.info("기일부 목록: "+temp);
 		}
@@ -53,7 +61,7 @@ public class TerminDocumentMapperTest {
 	
 	@Test//기일부 상세보기
 	public void testReadDetail() {
-		TerminDocumentVO tdVO=mapper.readDetail(3);
+		TerminDocumentVO tdVO=mapper.readDetail(2);
 		log.info("상세보기: "+tdVO);	
 	}
 

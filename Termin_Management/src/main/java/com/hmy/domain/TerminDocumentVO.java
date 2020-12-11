@@ -2,6 +2,8 @@ package com.hmy.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Data
@@ -13,7 +15,9 @@ public class TerminDocumentVO {
 	private String td_case_number; //사건번호
 	private String td_case_name; //사건명
 	private String td_court; //법원
-	private Date td_termin; //기일
+	
+	//@DateTimeFormat(pattern="yyyy-MM-dd") //들어오는 패턴이 yyyy-MM-dd ( ex>2018-01-01 )
+	private String td_termin; //기일
 	private String td_time; //시간
 	private String td_court_room; //법정호실
 	private String td_termin_status; //기일사항(변론기일, 공판기일 등등)

@@ -6,8 +6,11 @@ import com.hmy.domain.TerminDocumentVO;
 
 public interface TerminDocumentMapper {
 	
-	//기일부 전체 목록 보기 (기일, 시간 순으로)
-	public List<TerminDocumentVO> getList();
+	//기일부 목록 보기 (기일 잡혀있는 사건)
+	public List<TerminDocumentVO> getList1();
+	
+	//기일부 목록 보기 (기일 아직 잡혀있지 않은 사건 / td_termin이 null값)
+	public List<TerminDocumentVO> getList2();
 	
 	//기일 등록
 	public int insert(TerminDocumentVO tdVO);
