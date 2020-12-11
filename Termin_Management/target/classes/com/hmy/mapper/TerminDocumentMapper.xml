@@ -5,8 +5,35 @@
   
 <mapper namespace="com.hmy.mapper.TerminDocumentMapper">
 
+<!-- 	기일목록보기 -->
   <select id="getList" resultType="com.hmy.domain.TerminDocumentVO">
     SELECT * FROM termindocument order by td_termin, td_time
+  </select>
+  
+<!--   기일등록 -->
+  <insert id="insert">
+  INSERT INTO termindocument (td_client, td_litigation_type, td_other_party, td_case_number, td_case_name,
+  td_court, td_termin, td_time, td_court_room, td_termin_status, td_note)
+   VALUES (#{td_client}, #{td_litigation_type}, #{td_other_party}, #{td_case_number}, #{td_case_name}, 
+   #{td_court}, #{td_termin}, #{td_time}, #{td_court_room}, #{td_termin_status}, #{td_note} );
+  </insert>
+  
+<!--   기일삭제 -->
+  <delete id="delete">
+    DELETE FROM termindocument where td_num=#{td_num}
+  </delete>
+  
+<!--   기일부 수정 -->
+  <update id="update">
+  	UPDATE termindocument SET td_client=#{td_client}, td_litigation_type=#{td_litigation_type}, td_other_party=#{td_other_party},
+  	td_case_number=#{td_case_number}, td_case_name=#{td_case_name}, td_court=#{td_court}, td_termin=#{td_termin},
+  	td_time=#{td_time}, td_court_room=#{td_court_room}, td_termin_status=#{td_termin_status}, td_note=#{td_note} 
+  	WHERE td_num=#{td_num}
+  </update>
+  
+<!--   기일부 상세보기 -->
+  <select id="readDetail" resultType="com.hmy.domain.TerminDocumentVO">
+  	select * from termindocument where td_num=#{td_num}
   </select>
   
 </mapper>

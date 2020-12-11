@@ -18,5 +18,6 @@ public class TerminDocumentVO {
 	private String td_court_room; //법정호실
 	private String td_termin_status; //기일사항(변론기일, 공판기일 등등)
 	private String td_note; //비고
+	private String td_num; //기일부번호 (PK)
 
 }
