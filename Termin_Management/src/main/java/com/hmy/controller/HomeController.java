@@ -1,4 +1,4 @@
-package com.hmy.tm;
+package com.hmy.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

@@ -2,7 +2,6 @@ package com.hmy.service;
 
 import static org.junit.Assert.assertNotNull;
 
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -34,7 +33,7 @@ public class TerminDocumentServiceTest {
 		List<TerminDocumentVO> tdVO=service.viewList();
 		log.info("기일부 목록");
 		for(TerminDocumentVO temp : tdVO) {
-			log.info(tdVO);
+			log.info(temp);
 		}
 	}
 	
