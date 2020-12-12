@@ -40,8 +40,9 @@ public class TerminDocumentMapperTest {
 	@Test //기일 등록 테스트
 	public void testInsert() {
 		TerminDocumentVO tdVO = new TerminDocumentVO();
-		tdVO.setTd_client("의뢰인");
-		tdVO.setTd_case_name("건물명도");
+		tdVO.setClient("의뢰인");
+		tdVO.setLitigation_type("민사전자");
+		tdVO.setCase_name("건물명도");
 		log.info("글 등록 개수: "+mapper.insert(tdVO)); 
 	}
 	
@@ -54,8 +55,8 @@ public class TerminDocumentMapperTest {
 	public void testUpdate() {
 		TerminDocumentVO tdVO = new TerminDocumentVO();
 		tdVO.setTd_num("5");
-		tdVO.setTd_client("수정의뢰인");
-		tdVO.setTd_case_name("건물명도");
+		tdVO.setClient("수정의뢰인");
+		tdVO.setCase_name("건물명도");
 		log.info("글 수정 개수: " + mapper.update(tdVO)); 
 	}
 	

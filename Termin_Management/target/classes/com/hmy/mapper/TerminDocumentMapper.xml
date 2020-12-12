@@ -7,19 +7,19 @@
 
 <!-- 	기일목록보기(기일 잡힌) -->
   <select id="getList1" resultType="com.hmy.domain.TerminDocumentVO">
-    SELECT * FROM termindocument where td_termin is not null order by td_termin, td_time
+    SELECT * FROM termindocument where termin is not null order by termin, time
   </select>
   <!-- 	기일목록보기(기일 아직 안잡힌) -->
   <select id="getList2" resultType="com.hmy.domain.TerminDocumentVO">
-    SELECT * FROM termindocument where td_termin is null order by td_client
+    SELECT * FROM termindocument where termin is null order by client
   </select>
   
 <!--   기일등록 -->
   <insert id="insert">
-  INSERT INTO termindocument (td_client, td_litigation_type, td_other_party, td_case_number, td_case_name,
-  td_court, td_termin, td_time, td_court_room, td_termin_status, td_note)
-   VALUES (#{td_client}, #{td_litigation_type}, #{td_other_party}, #{td_case_number}, #{td_case_name}, 
-   #{td_court}, #{td_termin}, #{td_time}, #{td_court_room}, #{td_termin_status}, #{td_note} );
+  INSERT INTO termindocument (client, litigation_type, other_party, case_number, case_name, court, termin, 
+  time, court_room, termin_status, note)
+   VALUES (#{client}, #{litigation_type}, #{other_party}, #{case_number}, #{case_name}, #{court}, #{termin},
+   #{time}, #{court_room}, #{termin_status}, #{note} );
   </insert>
   
 <!--   기일삭제 -->
@@ -29,9 +29,9 @@
   
 <!--   기일부 수정 -->
   <update id="update">
-  	UPDATE termindocument SET td_client=#{td_client}, td_litigation_type=#{td_litigation_type}, td_other_party=#{td_other_party},
-  	td_case_number=#{td_case_number}, td_case_name=#{td_case_name}, td_court=#{td_court}, td_termin=#{td_termin},
-  	td_time=#{td_time}, td_court_room=#{td_court_room}, td_termin_status=#{td_termin_status}, td_note=#{td_note} 
+  	UPDATE termindocument SET client=#{client}, litigation_type=#{litigation_type}, other_party=#{other_party},
+  	case_number=#{case_number}, case_name=#{case_name}, court=#{court}, termin=#{termin},
+  	time=#{time}, court_room=#{court_room}, termin_status=#{termin_status}, note=#{note} 
   	WHERE td_num=#{td_num}
   </update>
   

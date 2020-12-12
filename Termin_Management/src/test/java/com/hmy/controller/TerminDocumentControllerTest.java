@@ -34,20 +34,20 @@ public class TerminDocumentControllerTest {
 	
 	@Test //기일부 목록
 	public void testTmList() throws Exception {
-		log.info("리스트: "+mockMvc.perform(MockMvcRequestBuilders.get("/td/tmList")).andReturn()
+		log.info("리스트: "+mockMvc.perform(MockMvcRequestBuilders.get("/td/list")).andReturn()
 				.getModelAndView().getModelMap());
 	}
 	
 	@Test //기일 등록
 	public void testTmRegister() throws Exception {
-		log.info("결과페이지: "+mockMvc.perform(MockMvcRequestBuilders.post("/td/tmRegister")
+		log.info("결과페이지: "+mockMvc.perform(MockMvcRequestBuilders.post("/td/register")
 				.param("td_client", "테스트 의뢰인").param("td_other_party", "테스트 상대방"))
 		.andReturn().getModelAndView().getViewName()); //열리는 페이지-/td/tmList
 	}
 	
 	@Test //기일 삭제
 	public void testTmRemove() throws Exception {
-		log.info("결과페이지: "+mockMvc.perform(MockMvcRequestBuilders.post("/td/tmRemove")
+		log.info("결과페이지: "+mockMvc.perform(MockMvcRequestBuilders.post("/td/remove")
 				.param("td_num", "2")).andReturn().getModelAndView().getViewName()); ///td/tmList
 		
 	}

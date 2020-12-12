@@ -40,30 +40,30 @@ public class TerminDocumentServiceTest {
 	@Test //기일 등록 테스트
 	public void testTerminRegister() {
 		TerminDocumentVO tdVO = new TerminDocumentVO();
-		tdVO.setTd_client("이방원");
-		tdVO.setTd_case_name("손해배상(기)");
-		tdVO.setTd_case_number("2016가단55555");
-		tdVO.setTd_court("안양지원제3단독");
-		tdVO.setTd_litigation_type("민사");
+		tdVO.setClient("이방원");
+		tdVO.setCase_name("손해배상(기)");
+		tdVO.setCase_number("2000가단1111");
+		tdVO.setCourt("안양지원제3단독");
+		tdVO.setLitigation_type("민사");
 		log.info("기일등록 성공: "+service.terminRegister(tdVO));
-	}
-	
-	@Test //기일 삭제 테스트
-	public void testTerminRemove() {
-		log.info("기일삭제 성공: "+service.terminRemove(8));
 	}
 	
 	//기일 수정 테스트
 	@Test
 	public void testTerminModify() {
 		TerminDocumentVO tdVO = new TerminDocumentVO();
-		tdVO.setTd_num("8");
-		tdVO.setTd_client("수정");
-		tdVO.setTd_case_name("수정수정");
-		tdVO.setTd_case_number("20ㄴㄴㄴ55");
-		tdVO.setTd_court("안양지원제3단독");
-		tdVO.setTd_litigation_type("민사");
+		tdVO.setTd_num("9");
+		tdVO.setClient("수정");
+		tdVO.setCase_name("수정수정");
+		tdVO.setCase_number("55");
+		tdVO.setCourt("안양지원제3단독");
+		tdVO.setNote("비고수정");
 		log.info("기일수정 성공: "+service.terminModify(tdVO));
+	}
+	
+	@Test //기일 삭제 테스트
+	public void testTerminRemove() {
+		log.info("기일삭제 성공: "+service.terminRemove(9));
 	}
 
 	//기일부 상세보기 테스트
