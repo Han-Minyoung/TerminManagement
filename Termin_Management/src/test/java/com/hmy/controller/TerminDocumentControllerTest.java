@@ -38,11 +38,18 @@ public class TerminDocumentControllerTest {
 				.getModelAndView().getModelMap());
 	}
 	
-	@Test
+	@Test //기일 등록
 	public void testTmRegister() throws Exception {
 		log.info("결과페이지: "+mockMvc.perform(MockMvcRequestBuilders.post("/td/tmRegister")
 				.param("td_client", "테스트 의뢰인").param("td_other_party", "테스트 상대방"))
 		.andReturn().getModelAndView().getViewName()); //열리는 페이지-/td/tmList
+	}
+	
+	@Test //기일 삭제
+	public void testTmRemove() throws Exception {
+		log.info("결과페이지: "+mockMvc.perform(MockMvcRequestBuilders.post("/td/tmRemove")
+				.param("td_num", "2")).andReturn().getModelAndView().getViewName()); ///td/tmList
+		
 	}
 	
 

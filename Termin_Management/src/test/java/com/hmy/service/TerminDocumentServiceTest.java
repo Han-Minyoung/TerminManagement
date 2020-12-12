@@ -63,7 +63,6 @@ public class TerminDocumentServiceTest {
 		tdVO.setTd_case_number("20ㄴㄴㄴ55");
 		tdVO.setTd_court("안양지원제3단독");
 		tdVO.setTd_litigation_type("민사");
-		tdVO.setTd_termin("2010-04-11");
 		log.info("기일수정 성공: "+service.terminModify(tdVO));
 	}
 

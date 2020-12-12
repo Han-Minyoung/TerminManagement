@@ -31,5 +31,11 @@ public class TerminDocumentController {
 		td_service.terminRegister(tdVO);
 		return "redirect:/td/tmList"; //기일 등록 후 기일부 목록으로 이동
 	}
+	
+	@PostMapping("/tmRemove") //기일 삭제
+	public String tmRemove(int td_num) {
+		td_service.terminRemove(td_num);
+		return "redirect:td/tmList"; //기일 삭제 후 기일부 목록으로
+	}
 
 }
