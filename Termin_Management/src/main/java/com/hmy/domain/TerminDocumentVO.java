@@ -24,4 +24,5 @@ public class TerminDocumentVO {
 	private String note; //비고
 	private String td_num; //기일부번호 (PK)
 
+
 }

@@ -20,10 +20,9 @@ public class TerminDocumentServiceImpl implements TerminDocumentService {
 
 	@Override //기일부 전체목록보기
 	public List<TerminDocumentVO> viewList() {
-		List<TerminDocumentVO> viewList = new ArrayList<TerminDocumentVO>(); 
+		List<TerminDocumentVO> viewList = new ArrayList<TerminDocumentVO>();		
 		viewList.addAll(td_mapper.getList1()); //기일이 잡혀있는 기일부 목록
-		viewList.addAll(td_mapper.getList2()); //기일이 아직 잡히지 않은 기일부 목록
-			
+		viewList.addAll(td_mapper.getList2()); //기일이 아직 잡히지 않은 기일부 목록			
 		return viewList; //기일부 전체 목록
 	}
 
